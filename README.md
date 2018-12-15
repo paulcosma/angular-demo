@@ -39,6 +39,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ### Building the project
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+### Docker
+Build image `docker build -t paulcosma/angular-demo-app .`<br>
+Run image `docker run -d --restart always --name angular-demo-app -p 49161:4200 paulcosma/angular-demo-app`
 
 ## Functionality overview
 
