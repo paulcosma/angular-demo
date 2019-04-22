@@ -1,10 +1,10 @@
 pipeline {
-  agent { label 'docker_root' }
+  agent { label 'web-server_root' }
   environment {
         DEPLOY_TO = 'master'
   }
   options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+    buildDiscarder(logRotator(numToKeepStr: '3'))
   }
   triggers {
     cron('@daily')
