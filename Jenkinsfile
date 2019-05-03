@@ -6,9 +6,9 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '3'))
   }
-  triggers {
-    cron('@daily')
-  }
+  //triggers {
+    //cron('@daily')
+  //}
   stages {
     stage('Checkout') {
       steps {
