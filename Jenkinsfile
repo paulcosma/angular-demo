@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'web-server_root' }
+  agent { label 'master' }
   environment {
         DEPLOY_TO = 'master'
   }
@@ -13,7 +13,7 @@ pipeline {
     stage('Checkout') {
       steps {
         git branch: 'master',
-        credentialsId: '747596f4-8a62-4f10-889a-09db1e9cc9ae',
+        credentialsId: '8cd52665-32ef-4dd3-b919-71f1dab02d84',
         url: 'git@github.com:paulcosma/angular-demo.git'
 
       }
@@ -23,18 +23,13 @@ pipeline {
         sh 'docker build -t paulcosma/angular-demo-app .'
       }
     }
-    stage('Login') {
-      steps {
-        sh 'docker login'
-      }
-    }
     stage('Publish') {
       when {
         // branch 'master'
         environment name: 'DEPLOY_TO', value: 'master'
       }
       steps {
-        withDockerRegistry([ credentialsId: "e80fc77a-7fce-4fbd-98ee-c7aa4d5a6952", url: "" ]) {
+        withDockerRegistry([ credentialsId: "052cba25-f00d-4ff2-b593-4e143b90515a", url: "" ]) {
           sh 'docker push paulcosma/angular-demo-app:latest'
         }
       }
