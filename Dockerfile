@@ -33,4 +33,4 @@ COPY . .
 EXPOSE 4200
 
 # Start App
-CMD [ "ng", "serve", "--host", "0.0.0.0" ]
+CMD [ "ng", "serve", "--host", "0.0.0.0", "--public-host", "https://angular.paulcosma.com" ]
