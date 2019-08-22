@@ -33,4 +33,4 @@ COPY . .
 EXPOSE 4200
 
 # Start App
-CMD [ "ng", "serve", "--host", "0.0.0.0", "--public-host", "https://angular.paulcosma.com" ]
+CMD [ "ng", "serve", "--open", "--host", "0.0.0.0", "--disable-host-check" ]
