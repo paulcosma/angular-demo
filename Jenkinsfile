@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'master' }
+  agent { label 'media' }
   environment {
         DEPLOY_TO = 'master'
   }
