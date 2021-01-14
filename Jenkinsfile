@@ -32,7 +32,7 @@ pipeline {
     }
     stage ('DEPLOY-apps-stack') {
       steps {
-        build job: 'DEPLOY-apps-stack'
+        build job: 'DEPLOY-docker-apps'
       }
     }
   }
